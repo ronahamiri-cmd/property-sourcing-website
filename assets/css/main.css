@@ -168,7 +168,14 @@ input, select, textarea {
 		margin: 0 0 2em 0;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1 {
+		color: #FAFAFB;
+		font-weight: bold;
+		line-height: 1.5;
+		margin: 0 0 0.5em 0;
+	}
+
+	h2, h3, h4, h5, h6 {
 		color: #1b2e42;
 		font-weight: bold;
 		line-height: 1.5;
@@ -3234,7 +3241,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style1 {
-			background-color: #FAFAFB;
+			background-color: #22364a;
 		}
 
 		.wrapper.style1-alt {
@@ -3875,6 +3882,7 @@ input, select, textarea {
 	}
 
 		#intro p {
+			color: #FAFAFB;
 			font-size: 1.25em;
 		}
 
