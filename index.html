@@ -1,12 +1,7 @@
 <!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
-		<title>Hyperspace by HTML5 UP</title>
+		<title>Amiri's Relocation</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,10 +14,10 @@
 				<div class="inner">
 					<nav>
 						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">Who we are</a></li>
+							<li><a href="#intro">Home</a></li>
+							<li><a href="#one">Services</a></li>
 							<li><a href="#two">What we do</a></li>
-							<li><a href="#three">Get in touch</a></li>
+							<li><a href="#three">Book a Free Consultation</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -34,9 +29,8 @@
 				<!-- Intro -->
 					<section id="intro" class="wrapper style1 fullscreen fade-up">
 						<div class="inner">
-							<h1>Hyperspace</h1>
-							<p>Just another fine responsive site template designed by <a href="http://html5up.net">HTML5 UP</a><br />
-							and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.</p>
+							<h1>Amiri's Relocation</h1>
+							<p>Helping you find the right rental properties, from start to finish.</p>
 							<ul class="actions">
 								<li><a href="#one" class="button scrolly">Learn more</a></li>
 							</ul>
@@ -129,27 +123,75 @@
 				<!-- Three -->
 					<section id="three" class="wrapper style1 fade-up">
 						<div class="inner">
-							<h2>Get in touch</h2>
-							<p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+							<h2>Book in a Free Consultation</h2>
+							<p>Let us know what kind of property you are looking for and we'll get in touch to discuss how we can help. Only your name, number and email address are required.</p>
 							<div class="split style1">
 								<section>
 									<form method="post" action="#">
 										<div class="fields">
 											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
+												<label for="name">Full Name *</label>
+												<input type="text" name="name" id="name" required/>
 											</div>
 											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
+												<label for="email">Email *</label>
+												<input type="email" name="email" id="email" required/>
+											</div>
+											<div class="field half">
+												<label for="phone">Phone Number *</label>
+												<input type="tel" name="phone" id="phone" required/>
+											</div>
+											<div class="field half">
+    											<label for="bedrooms">Bedrooms</label>
+    											<select name="bedrooms" id="bedrooms">
+        											<option value="">Select</option>
+        											<option value="studio">Studio</option>
+        											<option value="1">1 bedroom</option>
+        											<option value="2">2 bedrooms</option>
+        											<option value="3">3 bedrooms</option>
+        											<option value="4">4 bedrooms</option>
+        											<option value="5+">5+ bedrooms</option>
+        											<option value="flexible/uncertain">Flexible/Not sure</option>
+    											</select>
+											</div>
+											<div class="field half">
+												<label for="tenants">Number of Tenants</label>
+												<select name="tenants" id="tenants">
+													<option value="">Select</option>
+													<option value="1">1 tenant</option>
+													<option value="2">2 tenants</option>
+													<option value="3">3 tenants</option>
+													<option value="4">4 tenants</option>
+													<option value="5+">5+ tenants</option>
+													<option value="not-sure">Not sure yet</option>
+												</select>
+											</div>
+											<div class="field half">
+												<label for="budget">Monthly Budget</label>
+												<input type="text" name="budget" id="budget" placeholder="e.g. maximum monthly rent">
+											</div>
+											<div class="field half">
+												<label for="moveindate">Preferred Move-in Date</label>
+												<input type="date" name="moveindate" id="moveindate">
+											</div>
+											<div class="field half">
+												<label for="property-type">Property Type</label>
+												<select name="property-type" id="property-type">
+													<option value="">Select</option>
+													<option value="room">Room</option>
+													<option value="studio">Studio</option>
+													<option value="flat">Flat</option>
+													<option value="house">House</option>
+													<option value="unsure">Not sure yet</option>
+												</select>
 											</div>
 											<div class="field">
-												<label for="message">Message</label>
+												<label for="message">Additional Information</label>
 												<textarea name="message" id="message" rows="5"></textarea>
 											</div>
 										</div>
 										<ul class="actions">
-											<li><a href="" class="button submit">Send Message</a></li>
+											<li><button type="submit" class="button submit">Submit Enquiry</button></li>
 										</ul>
 									</form>
 								</section>
