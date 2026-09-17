@@ -108,7 +108,7 @@
 							<p>Let us know what kind of property you are looking for and we'll get in touch to discuss how we can help. Only your name, number and email address are required.</p>
 							<div class="split style1">
 								<section>
-									<form method="post" action="#">
+									<form id="consulation-form">
 										<div class="fields">
 											<div class="field half">
 												<label for="name">Full Name *</label>
@@ -172,7 +172,7 @@
 											</div>
 										</div>
 										<ul class="actions">
-											<li><button type="submit" class="button submit" style="background-color: #16263b;"">Submit Enquiry</button></li>
+											<li><button type="submit" class="button submit" style="background-color: #16263b;">Submit Enquiry</button></li>
 										</ul>
 									</form>
 								</section>
@@ -227,6 +227,20 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<script>
+    		const consultationForm = document.getElementById("consultation-form");
+
+    		consultationForm.addEventListener("submit", function(event) {
+        	event.preventDefault();
+
+        	const formData = new FormData(consultationForm);
+        	const data = Object.fromEntries(formData.entries());
+
+        	console.log(data);
+
+       	 	alert("Form captured successfully!");});
+			</script>
 
 	</body>
 </html>
