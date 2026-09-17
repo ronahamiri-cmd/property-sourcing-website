@@ -229,18 +229,24 @@
 			<script src="assets/js/main.js"></script>
 
 			<script>
-    		const consultationForm = document.getElementById("consultation-form");
+    console.log("SCRIPT LOADED");
 
-    		consultationForm.addEventListener("submit", function(event) {
-        	event.preventDefault();
+    const consultationForm = document.getElementById("consultation-form");
 
-        	const formData = new FormData(consultationForm);
-        	const data = Object.fromEntries(formData.entries());
+    console.log("FORM:", consultationForm);
 
-        	console.log(data);
+    consultationForm.addEventListener("submit", function(event) {
+        console.log("FORM SUBMITTED");
 
-       	 	alert("Form captured successfully!");});
-			</script>
+        event.preventDefault();
 
+        const formData = new FormData(consultationForm);
+        const data = Object.fromEntries(formData.entries());
+
+        console.log(data);
+
+        alert("Form captured successfully!");
+    });
+</script>
 	</body>
 </html>
