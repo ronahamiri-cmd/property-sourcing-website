@@ -229,49 +229,18 @@
 			<script src="assets/js/main.js"></script>
 
 		<script>
-			alert("SCRIPT IS RUNNING");
-    console.log("SCRIPT IS RUNNING");
-const consultationForm = document.getElementById("consultation-form");
+    console.log("Script loaded");
 
-consultationForm.addEventListener("submit", async function(event) {
-    event.preventDefault();
+    const consultationForm = document.getElementById("consultation-form");
 
-    const submitButton = consultationForm.querySelector(
-        'button[type="submit"]'
-    );
+    console.log("Form found:", consultationForm);
 
-    submitButton.disabled = true;
-    submitButton.textContent = "Submitting...";
+    consultationForm.addEventListener("submit", function(event) {
+        event.preventDefault();
 
-    const formData = new FormData(consultationForm);
-    const data = Object.fromEntries(formData.entries());
-
-    console.log("Sending:", data);
-
-    try {
-        await fetch(
-            "https://script.google.com/macros/s/AKfycbyaVSHIj5MDOHlZaYrGvqZPuAQMSJoGaP4MeE7P7fgs4bsbXyu7r3SokDuTFOHP-DGP/exec",
-            {
-                method: "POST",
-                headers: {
-                    "Content-Type": "text/plain;charset=utf-8"
-                },
-                body: JSON.stringify(data)
-            }
-        );
-
-        alert("Thank you! Your enquiry has been submitted.");
-        consultationForm.reset();
-
-    } catch (error) {
-        console.error("Submission error:", error);
-
-        alert("Sorry, something went wrong. Please try again.");
-    } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = "Submit Enquiry";
-    }
-});
+        console.log("Form submitted");
+        alert("FORM SUBMISSION DETECTED");
+    });
 </script>
 
 	</body>
