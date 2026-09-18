@@ -14,7 +14,7 @@
 				<div class="inner">
 					<nav>
 						<ul>
-							<li><a href="#intro">Home</a></li>
+							<li><a href="#intro"><span class="icon solid major fa-home"></span>Home</a></li>
 							<li><a href="#one">Services</a></li>
 							<li><a href="#two">What we do</a></li>
 							<li><a href="#three">Book a Free Consultation</a></li>
@@ -92,7 +92,7 @@
 								<section>
 									<span class="icon solid major fa-comments"></span>
 									<h3>Book a free Consultation</h3>
-									<p>Start with a free consulation so we can understand what you're looking for.</p>
+									<p>Start with a free consultation so we can understand what you're looking for.</p>
 								</section>
 							</div>
 							<ul class="actions">
@@ -108,7 +108,7 @@
 							<p>Let us know what kind of property you are looking for and we'll get in touch to discuss how we can help. Only your name, number and email address are required.</p>
 							<div class="split style1">
 								<section>
-									<form id="consulation-form">
+									<form id="consultation-form">
 										<div class="fields">
 											<div class="field half">
 												<label for="name">Full Name *</label>
@@ -228,25 +228,46 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-			<script>
-    console.log("SCRIPT LOADED");
+		<script>
+		const consultationForm = document.getElementById("consultation-form");
 
-    const consultationForm = document.getElementById("consultation-form");
+		consultationForm.addEventListener("submit", async function(event) {
+    	event.preventDefault();
 
-    console.log("FORM:", consultationForm);
+    const submitButton = consultationForm.querySelector(
+        'button[type="submit"]'
+    );
 
-    consultationForm.addEventListener("submit", function(event) {
-        console.log("FORM SUBMITTED");
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting...";
 
-        event.preventDefault();
+    const formData = new FormData(consultationForm);
+    const data = Object.fromEntries(formData.entries());
 
-        const formData = new FormData(consultationForm);
-        const data = Object.fromEntries(formData.entries());
+    try {
+        await fetch("https://script.google.com/macros/s/AKfycbyaVSHIj5MDOHlZaYrGvqZPuAQMSJoGaP4MeE7P7fgs4bsbXyu7r3SokDuTFOHP-DGP/exec", {
+            method: "POST",
+            headers: {
+                "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify(data)
+        });
 
-        console.log(data);
+        alert("Thank you! Your enquiry has been submitted.");
+        consultationForm.reset();
 
-        alert("Form captured successfully!");
-    });
+    } catch (error) {
+        console.error(error);
+
+        alert(
+            "Sorry, something went wrong. Please try again."
+        );
+    } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = "Submit Enquiry";
+    }
+});
 </script>
+
 	</body>
 </html>
